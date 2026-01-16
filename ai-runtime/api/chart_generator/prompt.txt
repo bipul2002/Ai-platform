@@ -42,10 +42,12 @@ Allowed chartType values (for Bar / Line / Area only):
 - "Custom"
 
 Rules (STRICT):
-- If chartType = "Timeseries" → fill ONLY "time"
-- If chartType = "LocationBased" → fill ONLY "locationDimension"
-- If chartType = "Custom" → fill ONLY "xAxisDimension"
+- If chartType = "Timeseries" → fill ONLY "time" (Primary Axis)
+- If chartType = "LocationBased" → fill ONLY "locationDimension" (Primary Axis)
+- If chartType = "Custom" → fill ONLY "xAxisDimension" (Primary Axis)
 - All other conditional fields MUST be empty strings ""
+
+PRIMARY AXIS vs CATEGORY (CRITICAL):\n- The dimension you are comparing ACROSS (e.g. "by District", "by Gender") is the PRIMARY AXIS.\n- Use "category" ONLY for SECONDARY grouping (e.g. "grouped by Age").\n- If there is only ONE dimension, it MUST go to "locationDimension" OR "xAxisDimension".\n- NEVER put the primary dimension in "category" if axes are empty.
 
 --------------------------------------------------
 LOCATION DIMENSION MAPPING (CRITICAL RULE)
@@ -180,7 +182,8 @@ MANDATORY RULES (NO EXCEPTIONS)
 12. Do NOT invent indicator IDs or dimension IDs
 13. Resolve indicators ONLY from Indicator List
 14. Resolve dimensions ONLY from Dimension List
-15. Indicator and dimension MUST belong to the SAME table
+15. CRITICAL: For fields 'value', 'category', and 'xAxisDimension', you must return the 'id' (e.g. "1", "10"), NOT the name.
+16. Indicator and dimension MUST belong to the SAME table
 16. NEVER ask follow-up questions
 17. NEVER guess
 18. If required information cannot be resolved, return EXACTLY:
