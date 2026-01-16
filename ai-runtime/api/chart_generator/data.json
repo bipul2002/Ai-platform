@@ -1,0 +1,1767 @@
+{
+    "all_chart_schemas": [
+        {
+            "PIE": {
+                "fields": {
+                    "value": {
+                        "label": "Value Field",
+                        "source": "indicatorList",
+                        "sourceType": "indicator"
+                    },
+                    "category": {
+                        "label": "Category Field",
+                        "source": "dimensionList",
+                        "sourceType": "dimension"
+                    },
+                    "aggregationType": {
+                        "label": "Aggregation",
+                        "type": "select",
+                        "options": [
+                            "sum",
+                            "count",
+                            "avg",
+                            "min",
+                            "max"
+                        ],
+                        "default": "sum"
+                    }
+                }
+            },
+            "AREA": {
+                "fields": {
+                    "chartType": {
+                        "label": "Chart Type",
+                        "type": "select",
+                        "options": [
+                            "Timeseries",
+                            "LocationBased",
+                            "Custom"
+                        ],
+                        "default": "Timeseries"
+                    },
+                    "time": {
+                        "label": "Time Field",
+                        "source": "timeGranularity",
+                        "sourceType": "string",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "Timeseries"
+                        }
+                    },
+                    "locationDimension": {
+                        "label": "Location Field",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "dimensionType": "location",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "LocationBased"
+                        }
+                    },
+                    "xAxisDimension": {
+                        "label": "X-Axis Dimension (Custom)",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "Custom"
+                        }
+                    },
+                    "value": {
+                        "label": "Indicator Field",
+                        "source": "indicatorList",
+                        "sourceType": "indicator"
+                    },
+                    "category": {
+                        "label": "Category Field (Optional)",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "optional": true
+                    },
+                    "aggregationType": {
+                        "label": "Aggregation",
+                        "type": "select",
+                        "options": [
+                            "sum",
+                            "count",
+                            "avg",
+                            "min",
+                            "max"
+                        ],
+                        "default": "sum"
+                    }
+                }
+            },
+            "LINE": {
+                "fields": {
+                    "chartType": {
+                        "label": "Chart Type",
+                        "type": "select",
+                        "options": [
+                            "Timeseries",
+                            "LocationBased",
+                            "Custom"
+                        ],
+                        "default": "Timeseries"
+                    },
+                    "time": {
+                        "label": "Time Field",
+                        "source": "timeGranularity",
+                        "sourceType": "string",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "Timeseries"
+                        }
+                    },
+                    "locationDimension": {
+                        "label": "Location Field",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "dimensionType": "location",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "LocationBased"
+                        }
+                    },
+                    "xAxisDimension": {
+                        "label": "X-Axis Dimension (Custom)",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "Custom"
+                        }
+                    },
+                    "value": {
+                        "label": "Indicator Field",
+                        "source": "indicatorList",
+                        "sourceType": "indicator"
+                    },
+                    "category": {
+                        "label": "Category Field (Optional)",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "optional": true
+                    },
+                    "aggregationType": {
+                        "label": "Aggregation",
+                        "type": "select",
+                        "options": [
+                            "sum",
+                            "count",
+                            "avg",
+                            "min",
+                            "max"
+                        ],
+                        "default": "sum"
+                    }
+                }
+            },
+            "BAR": {
+                "fields": {
+                    "chartType": {
+                        "label": "Chart Type",
+                        "type": "select",
+                        "options": [
+                            "Timeseries",
+                            "LocationBased",
+                            "Custom"
+                        ],
+                        "default": "Timeseries"
+                    },
+                    "time": {
+                        "label": "Time Field",
+                        "source": "timeGranularity",
+                        "sourceType": "string",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "Timeseries"
+                        }
+                    },
+                    "locationDimension": {
+                        "label": "Location Field",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "dimensionType": "location",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "LocationBased"
+                        }
+                    },
+                    "xAxisDimension": {
+                        "label": "X-Axis Dimension (Custom)",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "isHidden": true,
+                        "showWhen": {
+                            "field": "data.dataMapping.chartType",
+                            "equals": "Custom"
+                        }
+                    },
+                    "value": {
+                        "label": "Indicator Field",
+                        "source": "indicatorList",
+                        "sourceType": "indicator"
+                    },
+                    "category": {
+                        "label": "Category Field (Optional)",
+                        "source": "dimensionList",
+                        "sourceType": "dimension",
+                        "optional": true
+                    },
+                    "aggregationType": {
+                        "label": "Aggregation",
+                        "type": "select",
+                        "options": [
+                            "sum",
+                            "count",
+                            "avg",
+                            "min",
+                            "max"
+                        ],
+                        "default": "sum"
+                    }
+                }
+            }
+        }
+    ],
+    "indicator_list": [
+        {
+            "id": "1",
+            "indicator_name": "Immunized Children",
+            "short_description": "Total Number of Imunized children",
+            "value_destination": "health_analytics_data.immunized_children"
+        },
+        {
+            "id": "2",
+            "indicator_name": "Total Population",
+            "short_description": "Total population count",
+            "value_destination": "health_analytics_data.total_population"
+        },
+        {
+            "id": "3",
+            "indicator_name": "Total Households",
+            "short_description": "Total household count",
+            "value_destination": "health_analytics_data.total_households"
+        },
+        {
+            "id": "4",
+            "indicator_name": "Pregnant Women Registered",
+            "short_description": "Number of pregnant women registered",
+            "value_destination": "health_analytics_data.pregnant_women_registered"
+        },
+        {
+            "id": "5",
+            "indicator_name": "Institutional Deliveries",
+            "short_description": "Deliveries in healthcare facilities",
+            "value_destination": "health_analytics_data.institutional_deliveries"
+        },
+        {
+            "id": "6",
+            "indicator_name": "Home Deliveries",
+            "short_description": "Deliveries at home",
+            "value_destination": "health_analytics_data.home_deliveries"
+        },
+        {
+            "id": "7",
+            "indicator_name": "Child Births Registered",
+            "short_description": "Births recorded in the system",
+            "value_destination": "health_analytics_data.child_births_registered"
+        },
+        {
+            "id": "9",
+            "indicator_name": "Malnourished Children",
+            "short_description": "Children identified as malnourished",
+            "value_destination": "health_analytics_data.malnourished_children"
+        },
+        {
+            "id": "10",
+            "indicator_name": "Anemia Cases",
+            "short_description": "Reported anemia cases",
+            "value_destination": "health_analytics_data.anemia_cases_reported"
+        },
+        {
+            "id": "11",
+            "indicator_name": "Hypertension Cases",
+            "short_description": "Reported hypertension cases",
+            "value_destination": "health_analytics_data.hypertension_cases"
+        },
+        {
+            "id": "12",
+            "indicator_name": "Diabetes Cases",
+            "short_description": "Reported diabetes cases",
+            "value_destination": "health_analytics_data.diabetes_cases"
+        },
+        {
+            "id": "13",
+            "indicator_name": "Tuberculosis Cases",
+            "short_description": "Detected TB cases",
+            "value_destination": "health_analytics_data.tb_cases_detected"
+        },
+        {
+            "id": "14",
+            "indicator_name": "HIV Cases",
+            "short_description": "Reported HIV cases",
+            "value_destination": "health_analytics_data.hiv_cases_reported"
+        },
+        {
+            "id": "15",
+            "indicator_name": "COVID-19 Cases",
+            "short_description": "Reported COVID-19 cases",
+            "value_destination": "health_analytics_data.covid_cases_reported"
+        },
+        {
+            "id": "16",
+            "indicator_name": "Deaths Reported",
+            "short_description": "Reported deaths",
+            "value_destination": "health_analytics_data.deaths_reported"
+        },
+        {
+            "id": "17",
+            "indicator_name": "Immunization Coverage (%)",
+            "short_description": "Percentage of children immunized",
+            "value_destination": "health_analytics_data.immunization_coverage"
+        },
+        {
+            "id": "18",
+            "indicator_name": "Institutional Delivery Rate (%)",
+            "short_description": "Percentage of institutional deliveries",
+            "value_destination": "health_analytics_data.institutional_delivery_rate"
+        },
+        {
+            "id": "19",
+            "indicator_name": "Anemia Prevalence Rate (%)",
+            "short_description": "Percentage of anemia prevalence",
+            "value_destination": "health_analytics_data.anemia_prevalence_rate"
+        },
+        {
+            "id": "20",
+            "indicator_name": "NCD Screening Coverage (%)",
+            "short_description": "Coverage of NCD screening",
+            "value_destination": "health_analytics_data.ncd_screening_coverage"
+        },
+        {
+            "id": "2001",
+            "indicator_name": "Total ANC",
+            "short_description": "Total ANC visits count",
+            "value_destination": "rch_pregnancy_analytics_details.total_anc"
+        },
+        {
+            "id": "2002",
+            "indicator_name": "Total Regular ANC",
+            "short_description": "Regular ANC visits count",
+            "value_destination": "rch_pregnancy_analytics_details.total_regular_anc"
+        },
+        {
+            "id": "2003",
+            "indicator_name": "IFA Tablets",
+            "short_description": "IFA tablets provided (count)",
+            "value_destination": "rch_pregnancy_analytics_details.ifa"
+        },
+        {
+            "id": "2004",
+            "indicator_name": "FA Tabs in 0-30 Days",
+            "short_description": "FA tablets count in 0-30 days",
+            "value_destination": "rch_pregnancy_analytics_details.fa_tab_in_30_day"
+        },
+        {
+            "id": "2005",
+            "indicator_name": "FA Tabs in 31-60 Days",
+            "short_description": "FA tablets count in 31-60 days",
+            "value_destination": "rch_pregnancy_analytics_details.fa_tab_in_31_to_60_day"
+        },
+        {
+            "id": "2006",
+            "indicator_name": "FA Tabs in 61-90 Days",
+            "short_description": "FA tablets count in 61-90 days",
+            "value_destination": "rch_pregnancy_analytics_details.fa_tab_in_61_to_90_day"
+        },
+        {
+            "id": "2007",
+            "indicator_name": "IFA Tabs in 4-9 Months",
+            "short_description": "IFA tablets count in 4-9 months",
+            "value_destination": "rch_pregnancy_analytics_details.ifa_tab_in_4_month_to_9_month"
+        },
+        {
+            "id": "2008",
+            "indicator_name": "Total Calcium",
+            "short_description": "Calcium tablets provided (count)",
+            "value_destination": "rch_pregnancy_analytics_details.total_ca"
+        },
+        {
+            "id": "2009",
+            "indicator_name": "CA Tabs in 91-180 Days",
+            "short_description": "Calcium tablets count in 91-180 days",
+            "value_destination": "rch_pregnancy_analytics_details.ca_tab_in_91_to_180_day"
+        },
+        {
+            "id": "2010",
+            "indicator_name": "CA Tabs in 181-360 Days",
+            "short_description": "Calcium tablets count in 181-360 days",
+            "value_destination": "rch_pregnancy_analytics_details.ca_tab_in_181_to_360_day"
+        },
+        {
+            "id": "2011",
+            "indicator_name": "HB (g/dL)",
+            "short_description": "Haemoglobin value (g/dL)",
+            "value_destination": "rch_pregnancy_analytics_details.hb"
+        },
+        {
+            "id": "2012",
+            "indicator_name": "HB Tests (90-360 Days)",
+            "short_description": "HB tests count between 90-360 days",
+            "value_destination": "rch_pregnancy_analytics_details.hb_between_90_to_360_days"
+        },
+        {
+            "id": "2013",
+            "indicator_name": "Systolic BP",
+            "short_description": "Systolic blood pressure value",
+            "value_destination": "rch_pregnancy_analytics_details.systolic_bp"
+        },
+        {
+            "id": "2014",
+            "indicator_name": "Diastolic BP",
+            "short_description": "Diastolic blood pressure value",
+            "value_destination": "rch_pregnancy_analytics_details.diastolic_bp"
+        },
+        {
+            "id": "2015",
+            "indicator_name": "High Risk Count",
+            "short_description": "High risk reasons count",
+            "value_destination": "rch_pregnancy_analytics_details.high_risk_cnt"
+        },
+        {
+            "id": "2016",
+            "indicator_name": "HBSAG Tests Count",
+            "short_description": "HBSAG tests count",
+            "value_destination": "rch_pregnancy_analytics_details.hbsag_test_cnt"
+        },
+        {
+            "id": "2017",
+            "indicator_name": "HBSAG Reactive Count",
+            "short_description": "HBSAG reactive count",
+            "value_destination": "rch_pregnancy_analytics_details.hbsag_reactive_cnt"
+        },
+        {
+            "id": "2018",
+            "indicator_name": "HBSAG Non-Reactive Count",
+            "short_description": "HBSAG non-reactive count",
+            "value_destination": "rch_pregnancy_analytics_details.hbsag_non_reactive_cnt"
+        },
+        {
+            "id": "2019",
+            "indicator_name": "Still Birth",
+            "short_description": "Still birth count",
+            "value_destination": "rch_pregnancy_analytics_details.still_birth"
+        },
+        {
+            "id": "2020",
+            "indicator_name": "Live Birth",
+            "short_description": "Live birth count",
+            "value_destination": "rch_pregnancy_analytics_details.live_birth"
+        },
+        {
+            "id": "2021",
+            "indicator_name": "Haemoglobin Tested Count",
+            "short_description": "Haemoglobin tested count",
+            "value_destination": "rch_pregnancy_analytics_details.haemoglobin_tested_count"
+        },
+        {
+            "id": "2022",
+            "indicator_name": "Calcium Tabs After Delivery",
+            "short_description": "Calcium tablets count after delivery",
+            "value_destination": "rch_pregnancy_analytics_details.calcium_tab_after_delivery"
+        },
+        {
+            "id": "2023",
+            "indicator_name": "IFA Tabs After Delivery",
+            "short_description": "IFA tablets count after delivery",
+            "value_destination": "rch_pregnancy_analytics_details.ifa_tab_after_delivery"
+        },
+        {
+            "id": "2024",
+            "indicator_name": "Last Systolic BP",
+            "short_description": "Last recorded systolic BP",
+            "value_destination": "rch_pregnancy_analytics_details.last_systolic_bp"
+        },
+        {
+            "id": "2025",
+            "indicator_name": "Last Diastolic BP",
+            "short_description": "Last recorded diastolic BP",
+            "value_destination": "rch_pregnancy_analytics_details.last_diastolic_bp"
+        },
+        {
+            "id": "2026",
+            "indicator_name": "Prev Pregnancy Diff (Months)",
+            "short_description": "Previous pregnancy difference in months",
+            "value_destination": "rch_pregnancy_analytics_details.prev_preg_diff_in_month"
+        },
+        {
+            "id": "2027",
+            "indicator_name": "Gravida",
+            "short_description": "Gravida value",
+            "value_destination": "rch_pregnancy_analytics_details.gravida"
+        },
+        {
+            "id": "2028",
+            "indicator_name": "Delivery Week",
+            "short_description": "Delivery week number",
+            "value_destination": "rch_pregnancy_analytics_details.del_week"
+        },
+        {
+            "id": "2029",
+            "indicator_name": "L2L Preg Complication Length",
+            "short_description": "Count/length of complications text (derived by source)",
+            "value_destination": "rch_pregnancy_analytics_details.l2l_preg_complication_length"
+        }
+    ],
+    "dimension_list": [
+        {
+            "id": "2",
+            "table_name": "health_analytics_data",
+            "description": "Readable name of the location",
+            "column_name": "location_name",
+            "display_name": "Location Name"
+        },
+        {
+            "id": "10",
+            "table_name": "health_analytics_data",
+            "description": "State name",
+            "column_name": "state",
+            "display_name": "State"
+        },
+        {
+            "id": "11",
+            "table_name": "health_analytics_data",
+            "description": "District name",
+            "column_name": "district",
+            "display_name": "District"
+        },
+        {
+            "id": "12",
+            "table_name": "health_analytics_data",
+            "description": "Block name",
+            "column_name": "block",
+            "display_name": "Block"
+        },
+        {
+            "id": "13",
+            "table_name": "health_analytics_data",
+            "description": "Village name",
+            "column_name": "village",
+            "display_name": "Village"
+        },
+        {
+            "id": "34",
+            "table_name": "health_analytics_data",
+            "description": "Last modification time",
+            "column_name": "last_updated",
+            "display_name": "Last Updated"
+        },
+        {
+            "id": "33",
+            "table_name": "health_analytics_data",
+            "description": "System from which data is collected",
+            "column_name": "data_source",
+            "display_name": "Data Source"
+        },
+        {
+            "id": "7",
+            "table_name": "health_analytics_data",
+            "description": "Urban or Rural classification",
+            "column_name": "urban_rural",
+            "display_name": "Urban/Rural"
+        },
+        {
+            "id": "6",
+            "table_name": "health_analytics_data",
+            "description": "Whether the child is in school",
+            "column_name": "in_school",
+            "display_name": "In School"
+        },
+        {
+            "id": "4",
+            "table_name": "health_analytics_data",
+            "description": "Gender of individual or group",
+            "column_name": "gender",
+            "display_name": "Gender"
+        },
+        {
+            "id": "1001",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pregnancy_reg_id",
+            "display_name": "Pregnancy Reg ID"
+        },
+        {
+            "id": "1002",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "member_id",
+            "display_name": "Member ID"
+        },
+        {
+            "id": "1003",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "dob",
+            "display_name": "DOB"
+        },
+        {
+            "id": "1004",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "family_id",
+            "display_name": "Family ID"
+        },
+        {
+            "id": "1005",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "member_name",
+            "display_name": "Member Name"
+        },
+        {
+            "id": "1006",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "mobile_number",
+            "display_name": "Mobile Number"
+        },
+        {
+            "id": "1007",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "reg_service_date",
+            "display_name": "Reg Service Date"
+        },
+        {
+            "id": "1009",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "reg_service_financial_year",
+            "display_name": "Reg Service Financial Year"
+        },
+        {
+            "id": "1010",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "reg_server_date",
+            "display_name": "Reg Server Date"
+        },
+        {
+            "id": "1011",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pregnancy_reg_location_id",
+            "display_name": "Pregnancy Reg Location ID"
+        },
+        {
+            "id": "1012",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "native_location_id",
+            "display_name": "Native Location ID"
+        },
+        {
+            "id": "1013",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pregnancy_reg_family_id",
+            "display_name": "Pregnancy Reg Family ID"
+        },
+        {
+            "id": "1014",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "lmp_date",
+            "display_name": "LMP Date"
+        },
+        {
+            "id": "1015",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "edd",
+            "display_name": "EDD"
+        },
+        {
+            "id": "1016",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "preg_reg_state",
+            "display_name": "Preg Reg State"
+        },
+        {
+            "id": "1017",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "member_basic_state",
+            "display_name": "Member Basic State"
+        },
+        {
+            "id": "5",
+            "table_name": "health_analytics_data",
+            "description": "Age group classification",
+            "column_name": "age_group",
+            "display_name": "Age Group"
+        },
+        {
+            "id": "1018",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "lmp_month_year",
+            "display_name": "LMP Month Year"
+        },
+        {
+            "id": "1019",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "lmp_financial_year",
+            "display_name": "LMP Financial Year"
+        },
+        {
+            "id": "1020",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "date_of_delivery",
+            "display_name": "Date Of Delivery"
+        },
+        {
+            "id": "1021",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "date_of_delivery_month_year",
+            "display_name": "Date Of Delivery Month Year"
+        },
+        {
+            "id": "1022",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_location_id",
+            "display_name": "Delivery Location ID"
+        },
+        {
+            "id": "1023",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_family_id",
+            "display_name": "Delivery Family ID"
+        },
+        {
+            "id": "1024",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_reg_date",
+            "display_name": "Delivery Reg Date"
+        },
+        {
+            "id": "1025",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_reg_date_financial_year",
+            "display_name": "Delivery Reg Date Financial Year"
+        },
+        {
+            "id": "1026",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "member_current_location_id",
+            "display_name": "Member Current Location ID"
+        },
+        {
+            "id": "1027",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "age_during_delivery",
+            "display_name": "Age During Delivery"
+        },
+        {
+            "id": "1031",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc1",
+            "display_name": "ANC1"
+        },
+        {
+            "id": "1032",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc1_location_id",
+            "display_name": "ANC1 Location ID"
+        },
+        {
+            "id": "1033",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc2",
+            "display_name": "ANC2"
+        },
+        {
+            "id": "1034",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc2_location_id",
+            "display_name": "ANC2 Location ID"
+        },
+        {
+            "id": "1035",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc3",
+            "display_name": "ANC3"
+        },
+        {
+            "id": "1036",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc3_location_id",
+            "display_name": "ANC3 Location ID"
+        },
+        {
+            "id": "1037",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc4",
+            "display_name": "ANC4"
+        },
+        {
+            "id": "1038",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc4_location_id",
+            "display_name": "ANC4 Location ID"
+        },
+        {
+            "id": "1040",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt1_given",
+            "display_name": "TT1 Given"
+        },
+        {
+            "id": "1041",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt1_location_id",
+            "display_name": "TT1 Location ID"
+        },
+        {
+            "id": "1042",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt2_given",
+            "display_name": "TT2 Given"
+        },
+        {
+            "id": "1043",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt2_location_id",
+            "display_name": "TT2 Location ID"
+        },
+        {
+            "id": "1044",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt_boster",
+            "display_name": "TT Boster"
+        },
+        {
+            "id": "1045",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt_booster_location_id",
+            "display_name": "TT Booster Location ID"
+        },
+        {
+            "id": "1046",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt2_tt_booster_given",
+            "display_name": "TT2 TT Booster Given"
+        },
+        {
+            "id": "1047",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt2_tt_booster_location_id",
+            "display_name": "TT2 TT Booster Location ID"
+        },
+        {
+            "id": "1048",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "early_anc",
+            "display_name": "Early ANC"
+        },
+        {
+            "id": "1060",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "expected_delivery_place",
+            "display_name": "Expected Delivery Place"
+        },
+        {
+            "id": "1061",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "l2l_preg_complication",
+            "display_name": "L2L Preg Complication"
+        },
+        {
+            "id": "1062",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "outcome_l2l_preg",
+            "display_name": "Outcome L2L Preg"
+        },
+        {
+            "id": "1064",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "outcome_last_preg",
+            "display_name": "Outcome Last Preg"
+        },
+        {
+            "id": "1065",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "alben_given",
+            "display_name": "Alben Given"
+        },
+        {
+            "id": "1066",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "maternal_detah",
+            "display_name": "Maternal Detah"
+        },
+        {
+            "id": "1067",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "maternal_death_type",
+            "display_name": "Maternal Death Type"
+        },
+        {
+            "id": "1068",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "death_date",
+            "display_name": "Death Date"
+        },
+        {
+            "id": "1069",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "death_location_id",
+            "display_name": "Death Location ID"
+        },
+        {
+            "id": "1070",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "low_height",
+            "display_name": "Low Height"
+        },
+        {
+            "id": "1071",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "urine_albumin",
+            "display_name": "Urine Albumin"
+        },
+        {
+            "id": "1074",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "prev_pregnancy_date",
+            "display_name": "Prev Pregnancy Date"
+        },
+        {
+            "id": "1077",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "jsy_beneficiary",
+            "display_name": "JSY Beneficiary"
+        },
+        {
+            "id": "1078",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "jsy_payment_date",
+            "display_name": "JSY Payment Date"
+        },
+        {
+            "id": "1079",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "any_chronic_dis",
+            "display_name": "Any Chronic Dis"
+        },
+        {
+            "id": "1080",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "aadhar_and_bank",
+            "display_name": "Aadhar And Bank"
+        },
+        {
+            "id": "1081",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "aadhar_reg",
+            "display_name": "Aadhar Reg"
+        },
+        {
+            "id": "1082",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "aadhar_with_no_bank",
+            "display_name": "Aadhar With No Bank"
+        },
+        {
+            "id": "1083",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "bank_with_no_aadhar",
+            "display_name": "Bank With No Aadhar"
+        },
+        {
+            "id": "1084",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "no_aadhar_and_bank",
+            "display_name": "No Aadhar And Bank"
+        },
+        {
+            "id": "1085",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "high_risk_mother",
+            "display_name": "High Risk Mother"
+        },
+        {
+            "id": "1086",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_anemia",
+            "display_name": "Pre Preg Anemia"
+        },
+        {
+            "id": "1087",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_caesarean_section",
+            "display_name": "Pre Preg Caesarean Section"
+        },
+        {
+            "id": "1088",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_aph",
+            "display_name": "Pre Preg APH"
+        },
+        {
+            "id": "1089",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_pph",
+            "display_name": "Pre Preg PPH"
+        },
+        {
+            "id": "1090",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_pre_eclampsia",
+            "display_name": "Pre Preg Pre Eclampsia"
+        },
+        {
+            "id": "1091",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_abortion",
+            "display_name": "Pre Preg Abortion"
+        },
+        {
+            "id": "1092",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_obstructed_labour",
+            "display_name": "Pre Preg Obstructed Labour"
+        },
+        {
+            "id": "1093",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_placenta_previa",
+            "display_name": "Pre Preg Placenta Previa"
+        },
+        {
+            "id": "1094",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_malpresentation",
+            "display_name": "Pre Preg Malpresentation"
+        },
+        {
+            "id": "1095",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_birth_defect",
+            "display_name": "Pre Preg Birth Defect"
+        },
+        {
+            "id": "1096",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pre_preg_preterm_delivery",
+            "display_name": "Pre Preg Preterm Delivery"
+        },
+        {
+            "id": "1097",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "any_prev_preg_complication",
+            "display_name": "Any Prev Preg Complication"
+        },
+        {
+            "id": "1098",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "chro_tb",
+            "display_name": "Chro TB"
+        },
+        {
+            "id": "1099",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "chro_diabetes",
+            "display_name": "Chro Diabetes"
+        },
+        {
+            "id": "1100",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "chro_heart_kidney",
+            "display_name": "Chro Heart Kidney"
+        },
+        {
+            "id": "1101",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "chro_hiv",
+            "display_name": "Chro HIV"
+        },
+        {
+            "id": "1102",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "chro_sickle",
+            "display_name": "Chro Sickle"
+        },
+        {
+            "id": "1103",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "chro_thalessemia",
+            "display_name": "Chro Thalessemia"
+        },
+        {
+            "id": "1104",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_extreme_age",
+            "display_name": "Cur Extreme Age"
+        },
+        {
+            "id": "1105",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_low_weight",
+            "display_name": "Cur Low Weight"
+        },
+        {
+            "id": "1106",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_severe_anemia",
+            "display_name": "Cur Severe Anemia"
+        },
+        {
+            "id": "1107",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_blood_pressure_issue",
+            "display_name": "Cur Blood Pressure Issue"
+        },
+        {
+            "id": "1108",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_urine_protein_issue",
+            "display_name": "Cur Urine Protein Issue"
+        },
+        {
+            "id": "1109",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_convulsion_issue",
+            "display_name": "Cur Convulsion Issue"
+        },
+        {
+            "id": "1110",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_malaria_issue",
+            "display_name": "Cur Malaria Issue"
+        },
+        {
+            "id": "1111",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_social_vulnerability",
+            "display_name": "Cur Social Vulnerability"
+        },
+        {
+            "id": "1112",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_gestational_diabetes_issue",
+            "display_name": "Cur Gestational Diabetes Issue"
+        },
+        {
+            "id": "1113",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_twin_pregnancy",
+            "display_name": "Cur Twin Pregnancy"
+        },
+        {
+            "id": "1114",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_mal_presentation_issue",
+            "display_name": "Cur Mal Presentation Issue"
+        },
+        {
+            "id": "1115",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_absent_reduce_fetal_movment",
+            "display_name": "Cur Absent Reduce Fetal Movment"
+        },
+        {
+            "id": "1116",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_less_than_18_month_interval",
+            "display_name": "Cur Less Than 18 Month Interval"
+        },
+        {
+            "id": "1117",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_aph_issue",
+            "display_name": "Cur APH Issue"
+        },
+        {
+            "id": "1118",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_pelvic_sepsis",
+            "display_name": "Cur Pelvic Sepsis"
+        },
+        {
+            "id": "1119",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_hiv_issue",
+            "display_name": "Cur HIV Issue"
+        },
+        {
+            "id": "1120",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_vdrl_issue",
+            "display_name": "Cur VDRL Issue"
+        },
+        {
+            "id": "1121",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_hbsag_issue",
+            "display_name": "Cur HBSAG Issue"
+        },
+        {
+            "id": "1122",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "cur_brethless_issue",
+            "display_name": "Cur Brethless Issue"
+        },
+        {
+            "id": "1123",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "any_cur_preg_complication",
+            "display_name": "Any Cur Preg Complication"
+        },
+        {
+            "id": "1128",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_outcome",
+            "display_name": "Delivery Outcome"
+        },
+        {
+            "id": "1129",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "type_of_delivery",
+            "display_name": "Type Of Delivery"
+        },
+        {
+            "id": "1130",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_place",
+            "display_name": "Delivery Place"
+        },
+        {
+            "id": "1131",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "home_del",
+            "display_name": "Home Del"
+        },
+        {
+            "id": "1132",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "institutional_del",
+            "display_name": "Institutional Del"
+        },
+        {
+            "id": "1133",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_108",
+            "display_name": "Delivery 108"
+        },
+        {
+            "id": "1134",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "breast_feeding_in_one_hour",
+            "display_name": "Breast Feeding In One Hour"
+        },
+        {
+            "id": "1135",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_hospital",
+            "display_name": "Delivery Hospital"
+        },
+        {
+            "id": "1137",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "is_cortico_steroid",
+            "display_name": "Is Cortico Steroid"
+        },
+        {
+            "id": "1138",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "mother_alive",
+            "display_name": "Mother Alive"
+        },
+        {
+            "id": "1142",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_done_by",
+            "display_name": "Delivery Done By"
+        },
+        {
+            "id": "1143",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc1",
+            "display_name": "PNC1"
+        },
+        {
+            "id": "1144",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc1_location_id",
+            "display_name": "PNC1 Location ID"
+        },
+        {
+            "id": "1145",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc2",
+            "display_name": "PNC2"
+        },
+        {
+            "id": "1146",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc2_location_id",
+            "display_name": "PNC2 Location ID"
+        },
+        {
+            "id": "1147",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc3",
+            "display_name": "PNC3"
+        },
+        {
+            "id": "1148",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc3_location_id",
+            "display_name": "PNC3 Location ID"
+        },
+        {
+            "id": "1149",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc4",
+            "display_name": "PNC4"
+        },
+        {
+            "id": "1150",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pnc4_location_id",
+            "display_name": "PNC4 Location ID"
+        },
+        {
+            "id": "1152",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "iron_def_anemia_inj",
+            "display_name": "Iron Def Anemia Inj"
+        },
+        {
+            "id": "1153",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "blood_transfusion",
+            "display_name": "Blood Transfusion"
+        },
+        {
+            "id": "1156",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "unique_health_id",
+            "display_name": "Unique Health ID"
+        },
+        {
+            "id": "1157",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "member_caste",
+            "display_name": "Member Caste"
+        },
+        {
+            "id": "1158",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "is_bpl_family",
+            "display_name": "Is BPL Family"
+        },
+        {
+            "id": "1159",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_health_infrastructure",
+            "display_name": "Delivery Health Infrastructure"
+        },
+        {
+            "id": "1160",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "is_chiranjivi_delivery",
+            "display_name": "Is Chiranjivi Delivery"
+        },
+        {
+            "id": "1164",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ppiucd_insert_date",
+            "display_name": "PPIUCD Insert Date"
+        },
+        {
+            "id": "1165",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ppiucd_insert_location",
+            "display_name": "PPIUCD Insert Location"
+        },
+        {
+            "id": "1166",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_out_of_state_govt",
+            "display_name": "Delivery Out Of State Govt"
+        },
+        {
+            "id": "1167",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "delivery_out_of_state_pvt",
+            "display_name": "Delivery Out Of State Pvt"
+        },
+        {
+            "id": "1168",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "high_risk_reasons",
+            "display_name": "High Risk Reasons"
+        },
+        {
+            "id": "1169",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "complete_anc_date",
+            "display_name": "Complete ANC Date"
+        },
+        {
+            "id": "1170",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ifa_180_anc_date",
+            "display_name": "IFA 180 ANC Date"
+        },
+        {
+            "id": "1171",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "complete_anc_location",
+            "display_name": "Complete ANC Location"
+        },
+        {
+            "id": "1172",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ifa_180_anc_location",
+            "display_name": "IFA 180 ANC Location"
+        },
+        {
+            "id": "1173",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc_visit_dates",
+            "display_name": "ANC Visit Dates"
+        },
+        {
+            "id": "1174",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "bp_details",
+            "display_name": "BP Details"
+        },
+        {
+            "id": "1175",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "hb_details",
+            "display_name": "HB Details"
+        },
+        {
+            "id": "1176",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "urine_test_details",
+            "display_name": "Urine Test Details"
+        },
+        {
+            "id": "1177",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "weight_details",
+            "display_name": "Weight Details"
+        },
+        {
+            "id": "1178",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "vaccines_details",
+            "display_name": "Vaccines Details"
+        },
+        {
+            "id": "1179",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "calcium_tablets_details",
+            "display_name": "Calcium Tablets Details"
+        },
+        {
+            "id": "1180",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ifa_tablets_details",
+            "display_name": "IFA Tablets Details"
+        },
+        {
+            "id": "1181",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "fa_tablets_details",
+            "display_name": "FA Tablets Details"
+        },
+        {
+            "id": "1182",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "is_fru",
+            "display_name": "Is FRU"
+        },
+        {
+            "id": "1183",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "hb_date",
+            "display_name": "HB Date"
+        },
+        {
+            "id": "1184",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tracking_location_id",
+            "display_name": "Tracking Location ID"
+        },
+        {
+            "id": "1185",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "is_valid_for_tracking_report",
+            "display_name": "Is Valid For Tracking Report"
+        },
+        {
+            "id": "1186",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "pregnancy_reg_health_infra_id",
+            "display_name": "Pregnancy Reg Health Infra ID"
+        },
+        {
+            "id": "1187",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "anc1_health_ifra_id",
+            "display_name": "ANC1 Health Ifra ID"
+        },
+        {
+            "id": "1188",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt1_health_infra_id",
+            "display_name": "TT1 Health Infra ID"
+        },
+        {
+            "id": "1189",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt2_health_infra_id",
+            "display_name": "TT2 Health Infra ID"
+        },
+        {
+            "id": "1190",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "tt_boster_health_infra_id",
+            "display_name": "TT Boster Health Infra ID"
+        },
+        {
+            "id": "1191",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ifa_180_health_infra_id",
+            "display_name": "IFA 180 Health Infra ID"
+        },
+        {
+            "id": "1192",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ca_360_anc_date",
+            "display_name": "CA 360 ANC Date"
+        },
+        {
+            "id": "1193",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "ca_360_health_infra_id",
+            "display_name": "CA 360 Health Infra ID"
+        },
+        {
+            "id": "1194",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "discharge_date",
+            "display_name": "Discharge Date"
+        },
+        {
+            "id": "1196",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "is_misoprostol_given",
+            "display_name": "Is Misoprostol Given"
+        },
+        {
+            "id": "1197",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "free_medicines_jssk_provided",
+            "display_name": "Free Medicines JSSK Provided"
+        },
+        {
+            "id": "1198",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "free_diet_jssk_provided",
+            "display_name": "Free Diet JSSK Provided"
+        },
+        {
+            "id": "1199",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "free_diagnostics_jssk_provided",
+            "display_name": "Free Diagnostics JSSK Provided"
+        },
+        {
+            "id": "1200",
+            "table_name": "rch_pregnancy_analytics_details",
+            "description": "",
+            "column_name": "free_drop_back_to_home_jssk_provided",
+            "display_name": "Free Drop Back To Home JSSK Provided"
+        },
+        {
+            "id": "8",
+            "table_name": "health_analytics_data",
+            "description": "Caste classification (SC/ST/OBC/General)",
+            "column_name": "caste_category",
+            "display_name": "Caste Category"
+        },
+        {
+            "id": "9",
+            "table_name": "health_analytics_data",
+            "description": "APL/BPL classification",
+            "column_name": "socio_economic_status",
+            "display_name": "Socio-Economic Status"
+        }
+    ]
+}

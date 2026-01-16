@@ -1,0 +1,56 @@
+# General
+.DS_Store
+.idea
+.vscode
+*.log
+*.swp
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.postgres
+.env.admin-backend
+.env.ai-runtime
+.env.frontend
+!.env.example
+!.env.*.example
+
+# Admin Backend (Node.js/NestJS)
+admin-backend/node_modules/
+admin-backend/dist/
+admin-backend/coverage/
+admin-backend/*.log
+admin-backend/npm-debug.log*
+admin-backend/yarn-debug.log*
+admin-backend/yarn-error.log*
+
+# AI Runtime (Python)
+ai-runtime/*/__pycache__/
+ai-runtime/__pycache__/
+ai-runtime/*.py[cod]
+ai-runtime/*$py.class
+ai-runtime/venv/
+ai-runtime/.venv/
+ai-runtime/.venv_repro/
+ai-runtime/env/
+ai-runtime/.pytest_cache/
+ai-runtime/.coverage
+ai-runtime/htmlcov/
+ai-runtime/dist/
+ai-runtime/build/
+ai-runtime/*.egg-info/
+
+# Frontend (React/Vite)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/coverage/
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.eslintcache
+
+# Docker
+docker-compose.override.yml
