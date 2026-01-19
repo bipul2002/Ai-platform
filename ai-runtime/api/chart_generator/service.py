@@ -98,3 +98,26 @@ class ChartGeneratorService:
             logger.error("Chart configuration generation failed", error=str(e))
             return {"error": str(e)}
 
+    async def update_data(self, updates: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Update the data.json file with provided updates.
+        """
+        try:
+            # Update internal state if keys exist in updates
+            if "all_chart_schemas" in updates:
+                self.data["all_chart_schemas"] = updates["all_chart_schemas"]
+            if "indicator_list" in updates:
+                self.data["indicator_list"] = updates["indicator_list"]
+            if "dimension_list" in updates:
+                self.data["dimension_list"] = updates["dimension_list"]
+
+            # Persist to disk
+            with open(self.data_path, "w", encoding="utf-8") as f:
+                json.dump(self.data, f, indent=4)
+            
+            logger.info("data.json updated successfully")
+            return {"status": "success", "message": "Data updated successfully"}
+
+        except Exception as e:
+            logger.error("Failed to update data.json", error=str(e))
+            return {"status": "error", "message": str(e)}

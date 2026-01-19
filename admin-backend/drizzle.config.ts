@@ -5,7 +5,7 @@ export default defineConfig({
   out: './src/db/migrations',
   driver: 'pg',
   dbCredentials: {
-    connectionString: 'postgresql://postgres:postgres@127.0.0.1:5433/ai_query_platform',
+    connectionString: 'postgresql://postgres:postgres@127.0.0.1:5430/ai_query_platform',
   },
   verbose: true,
   strict: true,

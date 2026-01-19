@@ -6,7 +6,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 async function runMigrations() {
-    const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5433/ai_query_platform';
+    const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5430/ai_query_platform';
 
     console.log('🔄 Running database migrations...');
 

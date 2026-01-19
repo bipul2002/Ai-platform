@@ -46,3 +46,36 @@ async def generate_chart_config(
     except Exception as e:
         logger.error("API Error in chart generation", error=str(e))
         raise HTTPException(status_code=500, detail=str(e))
+
+class ChartDataUpdateRequest(BaseModel):
+    all_chart_schemas: list | None = None
+    indicator_list: list | None = None
+    dimension_list: list | None = None
+
+@router.post("/update_data")
+async def update_chart_data(
+    request: ChartDataUpdateRequest = Body(...)
+):
+    """
+    Update the underlying data.json used by the chart generator service.
+    Accepts updates for all_chart_schemas, indicator_list, and dimension_list.
+    """
+    try:
+        # Convert request model to dict, excluding None values
+        updates = request.model_dump(exclude_unset=True)
+        
+        if not updates:
+             raise HTTPException(status_code=400, detail="No updates provided")
+
+        result = await service.update_data(updates)
+        
+        if result.get("status") == "error":
+             raise HTTPException(status_code=500, detail=result.get("message"))
+             
+        return result
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error("API Error in update data", error=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
