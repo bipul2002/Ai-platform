@@ -67,7 +67,14 @@ async def update_chart_data(
         if not updates:
              raise HTTPException(status_code=400, detail="No updates provided")
 
+        # Log incoming update details
+        # User requested full data logging
+        logger.info("Received chart data update request", **updates)
+
         result = await service.update_data(updates)
+        
+        # Log the result status
+        logger.info("Chart data update operation completed", status=result.get("status"), message=result.get("message"))
         
         if result.get("status") == "error":
              raise HTTPException(status_code=500, detail=result.get("message"))
@@ -79,3 +86,16 @@ async def update_chart_data(
     except Exception as e:
         logger.error("API Error in update data", error=str(e))
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/get_data")
+async def get_chart_data():
+    """
+    Get the current data.json content.
+    """
+    try:
+        return service.data
+    except Exception as e:
+        logger.error("API Error in get data", error=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
+    

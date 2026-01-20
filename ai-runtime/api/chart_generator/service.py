@@ -105,10 +105,18 @@ class ChartGeneratorService:
         try:
             # Update internal state if keys exist in updates
             if "all_chart_schemas" in updates:
+                data_content = updates["all_chart_schemas"]
+                logger.info("Updating all_chart_schemas", data=data_content)
                 self.data["all_chart_schemas"] = updates["all_chart_schemas"]
+            
             if "indicator_list" in updates:
+                data_content = updates["indicator_list"]
+                logger.info("Updating indicator_list", data=data_content)
                 self.data["indicator_list"] = updates["indicator_list"]
+            
             if "dimension_list" in updates:
+                data_content = updates["dimension_list"]
+                logger.info("Updating dimension_list", data=data_content)
                 self.data["dimension_list"] = updates["dimension_list"]
 
             # Persist to disk
